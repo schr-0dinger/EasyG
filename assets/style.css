@@ -165,7 +165,8 @@ footer a {
 
 .victim {
   color: #1F1534;
-  transition: background-color 0.3s ease;
+  background-color: #fcecae !important;
+  transition: background-color 1s ease;
 }
 
 .dark-mode {

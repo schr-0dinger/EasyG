@@ -1,0 +1,141 @@
+body {
+    /* Add image */
+    background-image: url("https://images.pexels.com/photos/2411688/pexels-photo-2411688.jpeg");
+    /* Make image center */
+    background-position: center center;
+    /* Make image fixed */
+    background-attachment: fixed;
+    /* Not repeat images */
+    background-repeat: no-repeat;
+    /* Set background size auto */
+    background-size: cover;
+    /* Set background color (optional) */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adjust the color and opacity as needed */
+    /* Set a fixed height to ensure the overlay covers the entire background */
+    height: 100vh;
+    /* Create a stacking context for z-index to work */
+    position: relative;
+
+    margin: 0;
+    font-family: 'Poppins', sans-serif !important;
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* Pseudo-element for the overlay */
+body::before {
+    /* Content is empty, but the pseudo-element must have content */
+    content: "";
+    /* Position the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Apply a blur effect to the pseudo-element */
+    backdrop-filter: blur(5px);
+    /* Set a fixed height to ensure the pseudo-element covers the entire background */
+    height: 100%;
+    /* Adjust the z-index to control the stacking order */
+    z-index: -1;
+}
+
+/* Media query for mobile devices  */
+@media only screen and (max-width: 767px) {
+    body {
+        background-image: url("https://images.pexels.com/photos/2411688/pexels-photo-2411688.jpeg");
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 55px;
+    backdrop-filter: blur(15px);
+    color: #fff;
+  }
+  
+  .bar {
+    margin-left: 1rem;
+  }
+  
+  .art {
+    margin: 2rem;
+    border-radius: 40px;
+  }
+  
+  .copyright{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .page {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 65px;
+  }
+  
+  main {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+  }
+  
+  ul {
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    display:flex;
+    gap: 48px;
+    margin: 0;
+    padding: 0;    
+  }
+  
+  ul li a {
+    opacity: 0.5;
+  }
+  
+  
+  ul li a:hover {
+    font-weight: bold;
+    opacity: 1;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration:none !important;
+  }
+  
+  h1 {
+    width: 60%;
+    font-family: 'Poppins', sans-serif;
+    color: #1F1534;
+  }
+  
+  h1 span {
+    color: #ea485f;
+    font-weight: bold;
+  }
+  
+  section p {
+    font-size: 14px;
+    line-height: 28px;
+    color: #000;
+    margin: 40px 0;
+  }
+
+.victim {
+    color: #fff;
+}
+
+.glass {
+    backdrop-filter: blur(15px);
+    /* Set a fixed height to ensure the pseudo-element covers the entire background */
+    height: 100%;
+    /* Adjust the z-index to control the stacking order */
+    z-index: -1;
+    border-radius: 12px;
+    border: none;
+
+  }

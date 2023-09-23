@@ -1,10 +1,51 @@
 body {
+  /* Add image */
+  /* background-image: url("https://images.pexels.com/photos/2411688/pexels-photo-2411688.jpeg"); */
+  /* Make image center */
+  background-position: center center;
+  /* Make image fixed */
+  background-attachment: fixed;
+  /* Not repeat images */
+  background-repeat: no-repeat;
+  /* Set background size auto */
+  background-size: cover;
+  /* Set background color (optional) */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust the color and opacity as needed */
+  /* Set a fixed height to ensure the overlay covers the entire background */
+  height: 100vh;
+  /* Create a stacking context for z-index to work */
+  position: relative;
+
   margin: 0;
   font-family: 'Poppins', sans-serif !important;
-  background-color: #fcecae !important;
-  min-height: 100vh;   
-  transition: background-color 1s ease;
-  color: #000; 
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Pseudo-element for the overlay */
+body::before {
+  /* Content is empty, but the pseudo-element must have content */
+  content: "";
+  /* Position the pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Apply a blur effect to the pseudo-element */
+  backdrop-filter: blur(5px);
+  /* Set a fixed height to ensure the pseudo-element covers the entire background */
+  height: 100%;
+  /* Adjust the z-index to control the stacking order */
+  z-index: -1;
+}
+
+/* Media query for mobile devices  */
+@media only screen and (max-width: 767px) {
+  body {
+      background-image: url("https://images.pexels.com/photos/2411688/pexels-photo-2411688.jpeg");
+  }
 }
 
 nav {
@@ -24,6 +65,7 @@ nav {
 }
 
 .copyright{
+  color: #fff;
   display: flex;
   justify-content: center;
 }
@@ -61,7 +103,7 @@ ul li a:hover {
 
 a {
   color: #000;
-  text-decoration:none;
+  text-decoration:none !important;
 }
 
 h1 {
@@ -105,13 +147,16 @@ button:hover {
 }
 
 footer {
+  color: #fff;
   font-size:14px;
   line-height:28px;
   text-align: center;
   margin-top: 80px;
+  
 }
 
 footer a {
+  
   font-weight:bold;    
 }
 
@@ -164,67 +209,5 @@ footer a {
 }
 
 .victim {
-  color: #1F1534;
-  background-color: #fcecae !important;
-  transition: background-color 1s ease;
-}
-
-.dark-mode {
-  background-color: #1F1534!important;
   color: #fff;
-}
-
-.switch-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 1vh;
-  margin-bottom: 2rem;
-}
-
-.switch {
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  position: relative;
-  background-color: #ccc;
-  border-radius: 17px;
-  transition: background-color 0.3s ease;
-}
-
-.switch:before,
-.switch:after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-.switch:before {
-  left: 2px;
-  background-color: #fff;
-}
-
-.switch:after {
-  right: 2px;
-  background-color: #000;
-}
-
-input[type="checkbox"] {
-  visibility: hidden;
-}
-
-input[type="checkbox"]:checked + .switch:before {
-  transform: translateX(26px);
-}
-
-input[type="checkbox"]:checked + .switch:after {
-  transform: translateX(-26px);
-}
-
-input[type="checkbox"]:checked + .switch {
-  background-color: #6e6e6e;
 }
